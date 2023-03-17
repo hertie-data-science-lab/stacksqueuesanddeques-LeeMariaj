@@ -14,24 +14,28 @@ AQM = ArrayDequeMaxlen(20)
 
 print('Adding last')
 for i in range(100):
-    AQM.append(i)
+    AQM.add_last(i)
     print (i, AQM._data)
     
-print('\nDelete 80', AQM.remove(80), AQM._data, AQM._front)
+print('\nDelete 80', AQM.remove(80), AQM._data, AQM.first())
     
 
 
     
 print ('\nAdding first')
 for i in range(20, 10, -1):
-    AQM.appendleft(i)
+    AQM.add_first(i)
     print (i, AQM._data)
     
     
-print(AQM._front)
+print(AQM.first())
     
 
     
 print('\nPerforming the removals')
 while not AQM.is_empty():
-    print ('Remove first', AQM[0], AQM.popleft(), 'Remove last', AQM[-1],  AQM.pop())
+    print ('Remove first', AQM.first(), AQM.delete_first(), 'Remove '
+                                                       'last',
+           AQM.last(),  AQM.delete_last())
+
+print(AQM.length())
