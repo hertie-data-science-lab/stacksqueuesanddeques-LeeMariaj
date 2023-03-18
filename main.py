@@ -18,24 +18,18 @@ for i in range(100):
     print (i, AQM._data)
     
 print('\nDelete 80', AQM.remove(80), AQM._data, AQM.first())
-    
 
-
-    
 print ('\nAdding first')
 for i in range(20, 10, -1):
     AQM.add_first(i)
     print (i, AQM._data)
-    
-    
-print(AQM.first())
-    
 
-    
+print(AQM.first())
+
 print('\nPerforming the removals')
 while not AQM.is_empty():
-    print ('Remove first', AQM.first(), AQM.delete_first(), 'Remove '
-                                                       'last',
-           AQM.last(),  AQM.delete_last())
+    print ('Remove first', AQM.first(), AQM.delete_first(),
+           'Remove last', AQM.last(),  AQM.delete_last())
 
+print('\nConfirming the emptying out of the deque')
 print(AQM.length())
